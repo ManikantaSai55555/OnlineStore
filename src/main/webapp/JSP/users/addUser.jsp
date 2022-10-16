@@ -24,11 +24,11 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 <h1>REGISTER</h1><hr>
 <form action="../../usersservlet?mode=add" method="post" style="text-align:center;margin-left:auto;margin-right:auto">
   <div class="mb-3">
-    <label for="uname" class="form-label">Enter Username</label>
+    <label for="uname" class="form-label"><b>Enter Username</b></label>
     <input type="text" name="uname" class="form-control" id="uname">
     </div>
   <div class="mb-3">
-    <label for="pwd" class="form-label">Enter Password</label>
+    <label for="pwd" class="form-label"><b>Enter Password</b></label>
     <input type="password" name="pwd" class="form-control" id="pwd">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>

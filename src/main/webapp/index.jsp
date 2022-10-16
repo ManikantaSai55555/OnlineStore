@@ -24,12 +24,12 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 <h1>LOGIN</h1><hr>
 <form action="./usersservlet?mode=valid" method="post" style="text-align:center;margin-left:auto;margin-right:auto">
   <div class="mb-3">
-    <label for="uname" class="form-label">Username</label>
-    <input type="text" name="uname" class="form-control" id="uname">
+    <label for="uname" class="form-label"><b>Username</b></label>
+    <input type="text" name="uname" class="form-control" id="uname" required>
     </div>
   <div class="mb-3">
-    <label for="pwd" class="form-label">Password</label>
-    <input type="password" name="pwd" class="form-control" id="pwd">
+    <label for="pwd" class="form-label"><b>Password</b></label>
+    <input type="password" name="pwd" class="form-control" id="pwd" required>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button><br/><br/>
   New User?<a href="./JSP/users/addUser.jsp">Register</a>
