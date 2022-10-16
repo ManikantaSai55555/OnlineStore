@@ -1,0 +1,89 @@
+package com.src.ctrl;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.src.dao.ItemsDaoImpl;
+import com.src.dao.ItemsDaoInter;
+import com.src.dao.UsersDaoImpl;
+import com.src.dao.UsersDaoInter;
+import com.src.model.Item;
+import com.src.model.Order;
+import com.src.model.User;
+import com.src.service.ItemServiceImpl;
+import com.src.service.ItemServiceInter;
+import com.src.service.OrderServiceImpl;
+import com.src.service.OrderServiceInter;
+import com.src.service.UserServiceImpl;
+import com.src.service.UserServiceInter;
+
+/**
+ * Servlet implementation class OrdersServlet
+ */
+public class OrdersServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public OrdersServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String mode=request.getParameter("mode");
+		if(mode.equals("add"))
+		{
+		    System.out.println("add order");
+		    String itemname=request.getParameter("itemname");
+		    ItemServiceInter idi=new ItemServiceImpl();
+		    Item item=new Item(itemname);
+		    int itemid=idi.getItemId(item);
+		    String username=(String)request.getSession().getAttribute("username");
+            UserServiceInter usi=new UserServiceImpl();
+            int uid=usi.getUserID(new User(username));
+            Order order=new Order(itemid,uid);
+            OrderServiceInter osi=new OrderServiceImpl();
+            int res=osi.addOrder(order);
+            response.sendRedirect("./JSP/users/welcome.jsp");
+		}
+		else if(mode.equals("delete"))
+		{
+		    String itemname=request.getParameter("itemname");
+            ItemServiceInter idi=new ItemServiceImpl();
+            Item item=new Item(itemname);
+            int itemid=idi.getItemId(item);
+            String username=(String)request.getSession().getAttribute("username");
+            UserServiceInter usi=new UserServiceImpl();
+            int uid=usi.getUserID(new User(username));
+            Order order=new Order(itemid,uid);
+            OrderServiceInter osi=new OrderServiceImpl();
+            int res=osi.deleteOrder(order);
+            response.sendRedirect("./JSP/users/welcome.jsp");
+		}
+		else if(mode.equals("deleteitem"))
+		{
+		    String itemname=request.getParameter("itemname");
+		    String username=(String)request.getSession().getAttribute("username");
+		    OrderServiceInter osi=new OrderServiceImpl();
+		    int res=osi.deleteOrderItem(itemname, username);
+		    response.sendRedirect("./JSP/users/cart.jsp");
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

@@ -1,0 +1,3 @@
+create table users(uid int auto_increment primary key,username varchar(100) unique,passowrd varchar(30));
+create table items(itemid int auto_increment primary key,itemname varchar(50) unique, item_price bigint, itemquantity int, itemimage varchar(1000), itemcategory varchar(25));
+create table orders(orderid int auto_increment primary key,itemid int references items(itemid), uid int references users(uid), orderquantity int, orderprice bigint);
