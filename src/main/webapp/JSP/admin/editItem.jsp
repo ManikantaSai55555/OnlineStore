@@ -11,6 +11,16 @@
 body{
 background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
 }
+.edititem{
+	width:30%;
+	border:2px solid black;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:8%;
+	margin-bottom:auto;
+	padding-left:10px;
+	padding-right:10px;
+}
 </style>
 </head>
 <body>
@@ -40,7 +50,7 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 <%
 	String itemname=request.getParameter("itemname");
 %>
-<center>
+<div class="edititem">
 	<form action="../../itemservlet?mode=edit&itemname=<%=itemname %>" method="post">
 		<label for="itemname"> Itemname : <%=itemname %></label><br/>
 		<label for="price">Enter Price : </label>
@@ -49,6 +59,6 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 		<input type="number" name="quantity" placeholder="quantity" /><br/>
 		<input type="submit"/>
 	</form>
-</center>
+</div>
 </body>
 </html>

@@ -8,6 +8,10 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <style>
+th,td{
+border:1px solid black;
+font-weight:bold;
+}
 body{
 background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
 }
@@ -36,7 +40,7 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
         </li>
       </ul>
       </div>
-      <div style="padding-right:10px;float:right;">
+      <div style="padding-right:10px;">
     	<a href="../../index.jsp" type="button" class="btn btn-primary">Logout</a>
     </div>
 </nav>
@@ -45,7 +49,7 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 	ArrayList<Item> items=(ArrayList<Item>)isi.displayAllItems();
 %>
 <table class="table table-bordered" border="1" style="table-layout:fixed;text-align:center;margin-left:auto;margin-right:auto;width:75%;border-collapse:collapse">
-<tr><b>
+<tr>
 <th style="color:green;background-color:yellow;">Item</th>
 <th style="color:green;background-color:yellow;">Name</th>
 <th style="color:green;background-color:yellow;">Price</th>
@@ -58,7 +62,7 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 	{
 %>
 <tr>
-  <td style="color:blue;"><img src=<%=item.getUrl()%> alt="Item image" width="75%" height="75%"/></td>
+  <td style="color:blue;"><img src=<%=item.getUrl()%> alt="Item image" width="80%" height="80%"/></td>
   <td style="color:blue;"><%=item.getItemname() %></td>
   <td style="color:blue;"><%=item.getPrice() %></td>
   <td style="color:blue;"><%=item.getQuantity() %></td>
@@ -70,6 +74,7 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
   </td>
 </tr>
 <%} %>
+</table>
 <a href="./addItem.jsp" type="button" class="btn btn-primary">Add Item</a>
 </body>
 </html>

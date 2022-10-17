@@ -10,6 +10,7 @@ public interface UsersDaoInter {
 	public int addUsers(User user);
 	public int deleteUsers(User user);
 	public User getUserById(int userid);
+	public List<Order> getPaidOrders(User user);
 	public List<User> getAllUsers();
 	public List<Order> getOrders(User user);
 }

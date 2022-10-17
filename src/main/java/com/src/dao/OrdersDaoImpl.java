@@ -146,7 +146,7 @@ public class OrdersDaoImpl implements OrdersDaoInter {
         int itemid=idi.getItemId(item);
         UserServiceInter usi=new UserServiceImpl();
         int uid=usi.getUserID(new User(username));
-        String query="select orderquantity from orders where status='unpaid' itemid="+itemid+" and uid="+uid;
+        String query="select orderquantity from orders where status='unpaid' and itemid="+itemid+" and uid="+uid;
         int quantity=0;
         try {
             ResultSet res=stmt.executeQuery(query);
@@ -167,7 +167,7 @@ public class OrdersDaoImpl implements OrdersDaoInter {
         int itemid=idi.getItemId(item);
         UserServiceInter usi=new UserServiceImpl();
         int uid=usi.getUserID(new User(username));
-        String query="delete from orders where itemid="+itemid+" and uid="+uid;
+        String query="delete from orders where status='unpaid' and itemid="+itemid+" and uid="+uid;
         int res=0;
         try {
             res=stmt.executeUpdate(query);

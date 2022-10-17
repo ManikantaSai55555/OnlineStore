@@ -11,6 +11,16 @@
 body{
 background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
 }
+.additem{
+	width:30%;
+	border:2px solid black;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:8%;
+	margin-bottom:auto;
+	padding-left:10px;
+	padding-right:10px;
+}
 </style>
 </head>
 <body>
@@ -37,7 +47,7 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
       </ul>
     </div>
 </nav>
-<center>
+<div class="additem">
 	<form action="../../itemservlet?mode=add" method="post">
 		<label for="itemname">Enter Itemname : </label>
 		<input type="text" name="itemname" placeholder="itemname" /><br/>
@@ -51,6 +61,6 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 		<input type="text" name="category" placeholder="category" /><br/>
 		<input type="submit"/>
 	</form>
-</center>
+</div>
 </body>
 </html>

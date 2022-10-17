@@ -46,4 +46,10 @@ public class UserServiceImpl implements UserServiceInter {
         return udi.getUserById(userid);
     }
 
+    @Override
+    public List<Order> getPaidOrders(User user) {
+        // TODO Auto-generated method stub
+        return udi.getPaidOrders(user);
+    }
+
 }

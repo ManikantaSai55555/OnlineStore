@@ -23,10 +23,7 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 	ItemServiceInter isi=new ItemServiceImpl();
 	String username=(String)request.getSession().getAttribute("username");
 	User user=new User(username);
-	ArrayList<Order> orderItems=(ArrayList<Order>)usi.getOrders(user);
-	long totalAmount=0L;
-	for(Order order:orderItems)
-		totalAmount+=order.getOrderPrice();
+	ArrayList<Order> orderItems=(ArrayList<Order>)usi.getPaidOrders(user);
 %>
 <nav class="navbar navbar-expand-lg bg-light">
 	<a href="./welcome.jsp">
@@ -38,13 +35,12 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
         />
     </a>
     <div class="collapse navbar-collapse" id="navbarNav" style="margin-left:37%;">
-      <h1>Your Cart</h1>
+      <h1>Your Orders</h1>
     </div>
     <div style="padding-right:10px;">
-    	Total Amount:&#8377 <%=totalAmount %> 
-    	<a href="../../ordersservlet?mode=pay" type="button" class="btn btn-primary">Pay Now</a> 
+    	<a href="./cart.jsp" type="button" class="btn btn-primary">Go to Cart</a>
     </div>
-    <div style="padding-right:10px;">
+    <div>
     	<a href="../../index.jsp" type="button" class="btn btn-primary">Logout</a>
     </div>
 </nav>
@@ -59,7 +55,6 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 	for(Order order:orderItems)
 	{
 		Item item=isi.getItemsById(order.getItemid());
-		totalAmount+=order.getOrderPrice();
 		
 %>
 <tr>
@@ -67,7 +62,6 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
   <td><%=item.getItemname() %></td>
   <td><%=order.getOrderQuantity() %></td>
   <td>&#8377 <%=order.getOrderPrice() %></td>
-  <td><a type="button" class="btn btn-danger" href="../../ordersservlet?mode=deleteitem&itemname=<%=item.getItemname() %>&username=<%=username %> ">DELETE</a></td>
 </tr>
 <%} %>
 </table>

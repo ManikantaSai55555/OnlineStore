@@ -10,6 +10,7 @@
 <style>
 th,td{
 border:1px solid black;
+font-weight:bold;
 }
 body{
 background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
@@ -27,7 +28,7 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 	//displayItems();
 %>
 <nav class="navbar navbar-expand-lg bg-light">
-	<a>
+	<a href="./welcome.jsp">
       <img
         src="https://img.icons8.com/3d-fluency/2x/shop.png"
         alt="icon"
@@ -37,6 +38,9 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
     </a>
     <div class="collapse navbar-collapse" id="navbarNav" style="margin-left:37%;">
       <h1>Welcome <%=username %></h1>
+    </div>
+    <div style="padding-right:10px;">
+    	<a href="./orders.jsp" type="button" class="btn btn-primary">Orders</a>
     </div>
     <div style="padding-right:10px;">
     	<a href="./cart.jsp" type="button" class="btn btn-primary">Go to Cart</a>
@@ -59,7 +63,7 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 		
 %>
 <tr>
-  <td><img src=<%=item.getUrl()%> alt="Item image" width="75%" height="75%"/></td>
+  <td><img src=<%=item.getUrl()%> alt="Item image" width="80%" height="80%"/></td>
   <td><b><%=item.getItemname() %></b></td>
   <td><b>&#8377 <%=item.getPrice() %></b></td>
   <td style="color:blue;">

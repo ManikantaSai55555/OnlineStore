@@ -92,7 +92,7 @@ public class OrdersServlet extends HttpServlet {
             String username=(String)request.getSession().getAttribute("username");
             OrderServiceInter osi=new OrderServiceImpl();
             int res=osi.deliverItem(itemname, username);
-            response.sendRedirect("./JSP/users/cart.jsp");
+            response.sendRedirect("./JSP/admin/allOrders.jsp");
 		}
 	}
 

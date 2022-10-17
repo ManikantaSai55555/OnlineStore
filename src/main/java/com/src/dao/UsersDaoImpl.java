@@ -142,6 +142,26 @@ public class UsersDaoImpl implements UsersDaoInter {
         closeConnections();
         return user;
     }
+
+    @Override
+    public List<Order> getPaidOrders(User user) {
+        int id=getUserID(user);
+        getMyStatement();
+        String query="select * from orders where status='paid' and uid="+id;
+        List<Order> orderList = new ArrayList();
+        try {
+            ResultSet res=stmt.executeQuery(query);
+            while(res.next())
+            {
+                Order order=new Order(res.getInt(2),res.getInt(3),res.getInt(4),res.getLong(5),res.getString(6));
+                orderList.add(order);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        closeConnections();
+        return orderList;
+    }
     
     
 
