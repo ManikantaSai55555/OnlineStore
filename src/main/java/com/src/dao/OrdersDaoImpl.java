@@ -58,7 +58,7 @@ public class OrdersDaoImpl implements OrdersDaoInter {
         } catch (SQLException e2) {
             e2.printStackTrace();
         }
-        query="select * from orders where itemid="+order.getItemid()+" and uid="+order.getUserid();
+        query="select * from orders where status='unpaid' and itemid="+order.getItemid()+" and uid="+order.getUserid();
         int res=0;
         try {
             result = stmt.executeQuery(query);
@@ -68,7 +68,7 @@ public class OrdersDaoImpl implements OrdersDaoInter {
             }
             else
             {
-                query="insert into orders(itemid,uid,orderquantity,orderprice) values("+order.getItemid()+","+order.getUserid()+",1,"+price+")";
+                query="insert into orders(itemid,uid,orderquantity,orderprice,status) values("+order.getItemid()+","+order.getUserid()+",1,"+price+",'unpaid')";
             }
             try {
                 res=stmt.executeUpdate(query);
@@ -128,7 +128,7 @@ public class OrdersDaoImpl implements OrdersDaoInter {
             ResultSet res=stmt.executeQuery(query);
             while(res.next())
             {
-                Order order=new Order(res.getInt(2),res.getInt(3),res.getInt(4),res.getLong(5));
+                Order order=new Order(res.getInt(2),res.getInt(3),res.getInt(4),res.getLong(5),res.getString(6));
                 orderList.add(order);
             }
         } catch (SQLException e) {
@@ -146,7 +146,7 @@ public class OrdersDaoImpl implements OrdersDaoInter {
         int itemid=idi.getItemId(item);
         UserServiceInter usi=new UserServiceImpl();
         int uid=usi.getUserID(new User(username));
-        String query="select orderquantity from orders where itemid="+itemid+" and uid="+uid;
+        String query="select orderquantity from orders where status='unpaid' itemid="+itemid+" and uid="+uid;
         int quantity=0;
         try {
             ResultSet res=stmt.executeQuery(query);
@@ -168,6 +168,41 @@ public class OrdersDaoImpl implements OrdersDaoInter {
         UserServiceInter usi=new UserServiceImpl();
         int uid=usi.getUserID(new User(username));
         String query="delete from orders where itemid="+itemid+" and uid="+uid;
+        int res=0;
+        try {
+            res=stmt.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        closeConnections();
+        return res;
+    }
+
+    @Override
+    public int orderPayment(String username) {
+        getMyStatement();
+        UserServiceInter usi=new UserServiceImpl();
+        int uid=usi.getUserID(new User(username));
+        String query="update orders set status='paid' where uid="+uid;
+        int res=0;
+        try {
+            res=stmt.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        closeConnections();
+        return res;
+    }
+
+    @Override
+    public int deliverItem(String itemname, String username) {
+        getMyStatement();
+        ItemServiceInter idi=new ItemServiceImpl();
+        Item item=new Item(itemname);
+        int itemid=idi.getItemId(item);
+        UserServiceInter usi=new UserServiceImpl();
+        int uid=usi.getUserID(new User(username));
+        String query="delete from orders where status='paid' and itemid="+itemid+" and uid="+uid;
         int res=0;
         try {
             res=stmt.executeUpdate(query);

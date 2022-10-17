@@ -35,27 +35,30 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
           <a class="nav-link" href="./allOrders.jsp">Orders</a>
         </li>
       </ul>
+      </div>
+      <div style="padding-right:10px;float:right;">
+    	<a href="../../index.jsp" type="button" class="btn btn-primary">Logout</a>
     </div>
 </nav>
 <%
 	ItemServiceInter isi=new ItemServiceImpl();
 	ArrayList<Item> items=(ArrayList<Item>)isi.displayAllItems();
 %>
-<table class="table table-bordered" border="1" style="text-align:center;margin-left:auto;margin-right:auto;width:75%;border-collapse:collapse">
-<tr>
+<table class="table table-bordered" border="1" style="table-layout:fixed;text-align:center;margin-left:auto;margin-right:auto;width:75%;border-collapse:collapse">
+<tr><b>
 <th style="color:green;background-color:yellow;">Item</th>
 <th style="color:green;background-color:yellow;">Name</th>
 <th style="color:green;background-color:yellow;">Price</th>
 <th style="color:green;background-color:yellow;">Quantity</th>
 <th style="color:green;background-color:yellow;">Update</th>
-<th style="color:green;background-color:yellow;">Delete</th>
+<th style="color:green;background-color:yellow;">Delete</th></b>
 </tr>
 <%
 	for(Item item:items)
 	{
 %>
 <tr>
-  <td style="color:blue;"><img src=<%=item.getUrl()%> alt="Item image" width="400" height="400"/></td>
+  <td style="color:blue;"><img src=<%=item.getUrl()%> alt="Item image" width="75%" height="75%"/></td>
   <td style="color:blue;"><%=item.getItemname() %></td>
   <td style="color:blue;"><%=item.getPrice() %></td>
   <td style="color:blue;"><%=item.getQuantity() %></td>

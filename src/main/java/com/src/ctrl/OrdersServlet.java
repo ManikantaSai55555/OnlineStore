@@ -76,6 +76,24 @@ public class OrdersServlet extends HttpServlet {
 		    int res=osi.deleteOrderItem(itemname, username);
 		    response.sendRedirect("./JSP/users/cart.jsp");
 		}
+		else if(mode.equals("pay"))
+		{
+		    String username=(String)request.getSession().getAttribute("username");
+		    OrderServiceInter osi=new OrderServiceImpl();
+		    int res=osi.orderPayment(username);
+		    if(res>0)
+		        response.sendRedirect("./JSP/users/success.jsp");
+		    else
+		        response.sendRedirect("./JSP/users/cart.jsp");
+		}
+		else if(mode.equals("deliver"))
+		{
+		    String itemname=request.getParameter("itemname");
+            String username=(String)request.getSession().getAttribute("username");
+            OrderServiceInter osi=new OrderServiceImpl();
+            int res=osi.deliverItem(itemname, username);
+            response.sendRedirect("./JSP/users/cart.jsp");
+		}
 	}
 
 	/**

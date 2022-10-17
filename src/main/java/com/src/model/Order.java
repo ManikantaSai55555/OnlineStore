@@ -5,12 +5,14 @@ public class Order {
 	private int userid;
 	private int orderQuantity;
 	private long orderPrice;
-	public Order(int itemid, int userid, int orderQuantity, long orderPrice) {
+	private String status;
+	public Order(int itemid, int userid, int orderQuantity, long orderPrice,String status) {
         super();
         this.itemid = itemid;
         this.userid = userid;
         this.orderQuantity = orderQuantity;
         this.orderPrice = orderPrice;
+        this.status=status;
     }
     public Order(int itemid, int uid) {
         this.itemid=itemid;
@@ -40,4 +42,10 @@ public class Order {
 	public void setOrderPrice(long orderPrice) {
 		this.orderPrice = orderPrice;
 	}
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

@@ -38,7 +38,7 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
     </div>
     <div>
     	Total Amount:&#8377 <%=totalAmount %> 
-    	<a href="./success.jsp" type="button" class="btn btn-primary">Pay Now</a> 
+    	<a href="../../ordersservlet?mode=pay" type="button" class="btn btn-primary">Pay Now</a> 
     </div>
 </nav>
 <table class="border" border="1" style="text-align:center;margin-left:auto;margin-right:auto;width:75%;border-collapse:collapse">

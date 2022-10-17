@@ -34,4 +34,14 @@ public class OrderServiceImpl implements OrderServiceInter {
         return odi.deleteOrderItem(itemname, username);
     }
 
+    @Override
+    public int orderPayment(String username) {
+        return odi.orderPayment(username);
+    }
+
+    @Override
+    public int deliverItem(String itemname, String username) {
+        return odi.deliverItem(itemname, username);
+    }
+
 }

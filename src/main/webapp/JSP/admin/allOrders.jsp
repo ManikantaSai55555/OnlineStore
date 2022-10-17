@@ -50,6 +50,8 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 <th style="color:green;background-color:yellow;">User Name</th>
 <th style="color:green;background-color:yellow;">Quantity</th>
 <th style="color:green;background-color:yellow;">Total Amount</th>
+<th style="color:green;background-color:yellow;">Status</th>
+<th style="color:green;background-color:yellow;">Deliver?</th>
 </tr>
 <%
 	for(Order order:orderList)
@@ -63,6 +65,8 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
   <td style="color:blue;"><%=user.getUsername() %></td>
   <td style="color:blue;"><%=order.getOrderQuantity() %></td>
   <td style="color:blue;"><%=order.getOrderPrice() %></td>
+  <td style="color:blue;"><%=order.getStatus() %></td>
+  <td><a href="../../ordersservlet?mode=deliver&itemname=<%=item.getItemname() %>&username=<%=user.getUsername() %>" type="button" class="btn btn-primary">Deliver</a></td>
 </tr>
 <%} %>
 </body>
