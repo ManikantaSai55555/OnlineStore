@@ -22,10 +22,8 @@ public class ItemsDaoImpl implements ItemsDaoInter {
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/projectdb","root","Root@123");
             stmt=con.createStatement();
         } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -35,7 +33,6 @@ public class ItemsDaoImpl implements ItemsDaoInter {
             con.close();
             stmt.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -146,7 +143,6 @@ public class ItemsDaoImpl implements ItemsDaoInter {
             res.next();
             item=new Item(res.getString(2),res.getLong(3),res.getInt(4),res.getString(5),res.getString(6));
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         closeConnections();

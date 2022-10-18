@@ -13,23 +13,7 @@ import com.src.service.ItemServiceInter;
 import com.src.service.UserServiceImpl;
 import com.src.service.UserServiceInter;
 
-/**
- * Servlet implementation class ItemServlet
- */
 public class ItemServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ItemServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    String mode=request.getParameter("mode");
 	    if(mode.equals("add"))
@@ -76,12 +60,8 @@ public class ItemServlet extends HttpServlet {
                 response.sendRedirect("./JSP/items/editItem.jsp");
 	    }
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

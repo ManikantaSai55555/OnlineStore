@@ -13,31 +13,26 @@ public class UserServiceImpl implements UserServiceInter {
 
     @Override
     public int addUsers(User user) {
-        // TODO Auto-generated method stub
         return udi.addUsers(user);
     }
 
     @Override
     public int deleteUsers(User user) {
-        // TODO Auto-generated method stub
         return udi.deleteUsers(user);
     }
 
     @Override
     public List<User> getAllUsers() {
-        // TODO Auto-generated method stub
         return udi.getAllUsers();
     }
 
     @Override
     public List<Order> getOrders(User user) {
-        // TODO Auto-generated method stub
         return udi.getOrders(user);
     }
 
     @Override
     public int getUserID(User user) {
-        // TODO Auto-generated method stub
         return udi.getUserID(user);
     }
 
@@ -48,7 +43,6 @@ public class UserServiceImpl implements UserServiceInter {
 
     @Override
     public List<Order> getPaidOrders(User user) {
-        // TODO Auto-generated method stub
         return udi.getPaidOrders(user);
     }
 

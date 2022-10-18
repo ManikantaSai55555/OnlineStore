@@ -11,25 +11,21 @@ public class ItemServiceImpl implements ItemServiceInter {
     ItemsDaoInter idi=new ItemsDaoImpl();
     @Override
     public int addItem(Item item) {
-        // TODO Auto-generated method stub
         return idi.addItem(item);
     }
 
     @Override
     public int deleteItem(Item item) {
-        // TODO Auto-generated method stub
         return idi.deleteItem(item);
     }
 
     @Override
     public int editItem(Item item) {
-        // TODO Auto-generated method stub
         return idi.editItem(item);
     }
 
     @Override
     public List<Item> displayAllItems() {
-        // TODO Auto-generated method stub
         return idi.displayAllItems();
     }
 

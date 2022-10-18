@@ -9,7 +9,6 @@ public class User {
         this.password = password;
     }
     public User(String username) {
-        // TODO Auto-generated constructor stub
         this.username=username;
     }
     public String getUsername() {

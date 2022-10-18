@@ -24,10 +24,8 @@ public class UsersDaoImpl implements UsersDaoInter {
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/projectdb","root","Root@123");
             stmt=con.createStatement();
         } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -136,7 +134,6 @@ public class UsersDaoImpl implements UsersDaoInter {
             res.next();
             user=new User(res.getString(2),res.getString(3));
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         closeConnections();
