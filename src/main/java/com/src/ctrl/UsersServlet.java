@@ -69,7 +69,11 @@ public class UsersServlet extends HttpServlet {
             }
             else
             {
-                response.sendRedirect("./JSP/users/addUser.jsp");
+                RequestDispatcher rd=request.getRequestDispatcher("./JSP/users/addUser.jsp");
+                PrintWriter out=response.getWriter();
+                response.setContentType("text/html");
+                out.print("<center><h4 style='color:red;'> User already exists with this username!!</h4></center>");
+                rd.include(request, response);
             }
 		}
 		else if(mode.equals("delete"))

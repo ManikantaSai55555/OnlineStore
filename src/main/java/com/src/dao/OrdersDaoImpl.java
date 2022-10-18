@@ -203,6 +203,7 @@ public class OrdersDaoImpl implements OrdersDaoInter {
         UserServiceInter usi=new UserServiceImpl();
         int uid=usi.getUserID(new User(username));
         String query="update orders set status='delivered' where itemid="+itemid+" and uid="+uid+" and orderquantity="+quantity+" and status='paid' order by orderid limit 1";
+        System.out.println(query);
         int res=0;
         try {
             res=stmt.executeUpdate(query);

@@ -8,10 +8,11 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </head>
     <style>
-      body {
+      body,.card {
         text-align: center;
         padding: 40px 0;
         background: #EBF0F5;
+        background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
       }
         h1 {
           color: #88B04B;
@@ -40,6 +41,9 @@
         display: inline-block;
         margin: 0 auto;
       }
+      nav{
+      	padding-top:0;
+      }
     </style>
     <body>
     <nav class="navbar navbar-expand-lg bg-light">
@@ -60,15 +64,15 @@
     <div style="position:absolute;right:0;">
     	<a href="../../index.jsp" type="button" class="btn btn-primary">Logout</a>
     </div>
-</nav>
-      <div class="card">
+	</nav>
+    <div class="card">
       <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
         <i class="checkmark"><span style="font-family: Arial Unicode MS, Lucida Grande">
      &#10004;
 </span></i>
       </div>
         <h1>Success</h1> 
-        <p>We received your purchase request;<br/> we'll be in touch shortly!</p>
+        <b><p>We received your purchase request;<br/> we'll be in touch shortly!</p></b>
       </div>
       </body>
 </html>

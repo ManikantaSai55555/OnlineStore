@@ -18,7 +18,7 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-light">
-	<a>
+	<a href="./welcomeAdmin.jsp">
       <img
         src="https://img.icons8.com/3d-fluency/2x/shop.png"
         alt="icon"
@@ -38,6 +38,9 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
           <a class="nav-link active" aria-current="page" href="./allOrders.jsp">Orders</a>
         </li>
       </ul>
+    </div>
+    <div style="padding-right:10px;">
+    	<a href="../../index.jsp" type="button" class="btn btn-primary">Logout</a>
     </div>
 </nav>
 <% 

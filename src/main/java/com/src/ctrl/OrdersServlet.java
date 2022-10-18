@@ -89,7 +89,7 @@ public class OrdersServlet extends HttpServlet {
 		else if(mode.equals("deliver"))
 		{
 		    String itemname=request.getParameter("itemname");
-            String username=(String)request.getSession().getAttribute("username");
+            String username=request.getParameter("username");
             OrderServiceInter osi=new OrderServiceImpl();
             int quantity=Integer.parseInt(request.getParameter("quantity"));
             int res=osi.deliverItem(itemname, username,quantity);
