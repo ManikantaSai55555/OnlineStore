@@ -69,7 +69,7 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
   <td style="color:blue;"><b><%=order.getOrderQuantity() %></b></td>
   <td style="color:blue;"><b><%=order.getOrderPrice() %></b></td>
   <td style="color:blue;"><b><%=order.getStatus() %></b></td>
-  <td><a href="../../ordersservlet?mode=deliver&itemname=<%=item.getItemname() %>&username=<%=user.getUsername() %>" type="button" class="btn btn-primary">Deliver</a></td>
+  <td><a href="../../ordersservlet?mode=deliver&itemname=<%=item.getItemname() %>&username=<%=user.getUsername() %>&quantity=<%=order.getOrderQuantity() %>" type="button" class="btn btn-primary"><%= (order.getStatus().equals("delivered"))?"<span>&#10003;</span>":"Deliver" %></a></td>
 </tr>
 <%} %>
 </body>

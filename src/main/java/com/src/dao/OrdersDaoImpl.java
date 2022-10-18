@@ -64,7 +64,7 @@ public class OrdersDaoImpl implements OrdersDaoInter {
             result = stmt.executeQuery(query);
             if(result.next())
             {
-                query="update orders set orderquantity=orderquantity+1, orderprice=orderprice+"+price+" where itemid="+order.getItemid()+" and uid="+order.getUserid();
+                query="update orders set orderquantity=orderquantity+1, orderprice=orderprice+"+price+" where itemid="+order.getItemid()+" and uid="+order.getUserid()+" and status='unpaid'";
             }
             else
             {
@@ -183,7 +183,7 @@ public class OrdersDaoImpl implements OrdersDaoInter {
         getMyStatement();
         UserServiceInter usi=new UserServiceImpl();
         int uid=usi.getUserID(new User(username));
-        String query="update orders set status='paid' where uid="+uid;
+        String query="update orders set status='paid' where uid="+uid+" and status='unpaid'";
         int res=0;
         try {
             res=stmt.executeUpdate(query);
@@ -195,14 +195,14 @@ public class OrdersDaoImpl implements OrdersDaoInter {
     }
 
     @Override
-    public int deliverItem(String itemname, String username) {
+    public int deliverItem(String itemname, String username,int quantity) {
         getMyStatement();
         ItemServiceInter idi=new ItemServiceImpl();
         Item item=new Item(itemname);
         int itemid=idi.getItemId(item);
         UserServiceInter usi=new UserServiceImpl();
         int uid=usi.getUserID(new User(username));
-        String query="delete from orders where status='paid' and itemid="+itemid+" and uid="+uid;
+        String query="update orders set status='delivered' where itemid="+itemid+" and uid="+uid+" and orderquantity="+quantity+" and status='paid' order by orderid limit 1";
         int res=0;
         try {
             res=stmt.executeUpdate(query);

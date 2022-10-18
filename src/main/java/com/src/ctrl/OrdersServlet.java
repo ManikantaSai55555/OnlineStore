@@ -91,7 +91,8 @@ public class OrdersServlet extends HttpServlet {
 		    String itemname=request.getParameter("itemname");
             String username=(String)request.getSession().getAttribute("username");
             OrderServiceInter osi=new OrderServiceImpl();
-            int res=osi.deliverItem(itemname, username);
+            int quantity=Integer.parseInt(request.getParameter("quantity"));
+            int res=osi.deliverItem(itemname, username,quantity);
             response.sendRedirect("./JSP/admin/allOrders.jsp");
 		}
 	}

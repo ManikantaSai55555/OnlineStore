@@ -20,7 +20,17 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 	margin-bottom:auto;
 	padding-left:10px;
 	padding-right:10px;
+	text-align:center;
+	padding-top:20px;
+	padding-bottom:20px;
 }
+label{
+	font-weight:bold;
+}
+form  { display: table;padding-left:10%;      }
+p     { display: table-row;  }
+label { display: table-cell; }
+input { display: table-cell; }
 </style>
 </head>
 <body>
@@ -51,13 +61,13 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 	String itemname=request.getParameter("itemname");
 %>
 <div class="edititem">
+	<h2>Edit <%=itemname %></h2>
 	<form action="../../itemservlet?mode=edit&itemname=<%=itemname %>" method="post">
-		<label for="itemname"> Itemname : <%=itemname %></label><br/>
-		<label for="price">Enter Price : </label>
-		<input type="number" name="price" placeholder="price" /><br/>
-		<label for="quantity">Enter Quantity : </label>
-		<input type="number" name="quantity" placeholder="quantity" /><br/>
-		<input type="submit"/>
+		<p><label for="price">Enter Price : </label>
+		<input type="number" name="price" placeholder="price" /></p>
+		<p><label for="quantity">Enter Quantity : </label>
+		<input type="number" name="quantity" placeholder="quantity" /></p>
+		<div style="text-align:center"> <input type="submit"/></div>
 	</form>
 </div>
 </body>

@@ -50,6 +50,7 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 <th style="color:green;background-color:yellow;">Name</th>
 <th style="color:green;background-color:yellow;">Quantity</th>
 <th style="color:green;background-color:yellow;">Total Price</th>
+<th style="color:green;background-color:yellow;">Status</th>
 </tr>
 <%
 	for(Order order:orderItems)
@@ -62,6 +63,7 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
   <td><%=item.getItemname() %></td>
   <td><%=order.getOrderQuantity() %></td>
   <td>&#8377 <%=order.getOrderPrice() %></td>
+  <td><%= (order.getStatus().equals("delivered"))?"Delivered":"In Progress" %></td>
 </tr>
 <%} %>
 </table>

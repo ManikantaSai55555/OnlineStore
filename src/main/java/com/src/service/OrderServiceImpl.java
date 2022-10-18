@@ -40,8 +40,8 @@ public class OrderServiceImpl implements OrderServiceInter {
     }
 
     @Override
-    public int deliverItem(String itemname, String username) {
-        return odi.deliverItem(itemname, username);
+    public int deliverItem(String itemname, String username,int quantity) {
+        return odi.deliverItem(itemname, username,quantity);
     }
 
 }

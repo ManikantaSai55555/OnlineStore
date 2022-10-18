@@ -11,5 +11,5 @@ public interface OrderServiceInter {
     public int getOrderQuantity(String itemname,String username);
     public int deleteOrderItem(String itemname, String username);
     public int orderPayment(String username);
-    public int deliverItem(String itemname,String username);
+    public int deliverItem(String itemname,String username,int quantity);
 }

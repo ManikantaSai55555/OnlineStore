@@ -147,7 +147,7 @@ public class UsersDaoImpl implements UsersDaoInter {
     public List<Order> getPaidOrders(User user) {
         int id=getUserID(user);
         getMyStatement();
-        String query="select * from orders where status='paid' and uid="+id;
+        String query="select * from orders where status!='unpaid' and uid="+id;
         List<Order> orderList = new ArrayList();
         try {
             ResultSet res=stmt.executeQuery(query);

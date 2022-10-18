@@ -64,7 +64,7 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 <tr>
   <td style="color:blue;"><img src=<%=item.getUrl()%> alt="Item image" width="80%" height="80%"/></td>
   <td style="color:blue;"><%=item.getItemname() %></td>
-  <td style="color:blue;"><%=item.getPrice() %></td>
+  <td style="color:blue;">&#8377 <%=item.getPrice() %></td>
   <td style="color:blue;"><%=item.getQuantity() %></td>
   <td>
   <a href="./editItem.jsp?itemname=<%=item.getItemname() %>" type="button" class="btn btn-primary">Edit</a>

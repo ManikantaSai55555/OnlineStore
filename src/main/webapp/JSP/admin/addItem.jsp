@@ -20,7 +20,17 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
 	margin-bottom:auto;
 	padding-left:10px;
 	padding-right:10px;
+	text-align:center;
+	padding-top:20px;
+	padding-bottom:20px;
 }
+label{
+	font-weight:bold;
+}
+form  { display: table;padding-left:10%;      }
+p     { display: table-row;  }
+label { display: table-cell; }
+input { display: table-cell; }
 </style>
 </head>
 <body>
@@ -48,18 +58,19 @@ background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110
     </div>
 </nav>
 <div class="additem">
+	<h2>Add Item</h2><hr/>
 	<form action="../../itemservlet?mode=add" method="post">
-		<label for="itemname">Enter Itemname : </label>
-		<input type="text" name="itemname" placeholder="itemname" /><br/>
-		<label for="price">Enter Price : </label>
-		<input type="number" name="price" placeholder="price" /><br/>
-		<label for="quantity">Enter Quantity : </label>
-		<input type="number" name="quantity" placeholder="quantity" /><br/>
-		<label for="url">Enter Image URL : </label>
-		<input type="text" name="url" placeholder="image url" /><br/>
-		<label for="category">Enter Category : </label>
-		<input type="text" name="category" placeholder="category" /><br/>
-		<input type="submit"/>
+		<p><label for="itemname">Enter Itemname  </label>
+		:<input type="text" name="itemname" placeholder="itemname" /></p>
+		<p><label for="price">Enter Price  </label>
+		:<input type="number" name="price" placeholder="price" /></p>
+		<p><label for="quantity">Enter Quantity  </label>
+		:<input type="number" name="quantity" placeholder="quantity" /></p>
+		<p><label for="url">Enter Image URL  </label>
+		:<input type="text" name="url" placeholder="image url" /></p>
+		<p><label for="category">Enter Category  </label>
+		:<input type="text" name="category" placeholder="category" /></p>
+		<input type="submit" align="center"/>
 	</form>
 </div>
 </body>
