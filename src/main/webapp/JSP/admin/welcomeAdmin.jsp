@@ -51,6 +51,9 @@ body {
 	ItemServiceInter isi = new ItemServiceImpl();
 	ArrayList<Item> items = (ArrayList<Item>) isi.displayAllItems();
 	%>
+	<div style="padding-left:81.5%;">
+	<a href="./addItem.jsp" type="button" class="btn btn-primary">Add Item</a>
+	</div>
 	<table class="table table-bordered" border="1"
 		style="table-layout: fixed; text-align: center; margin-left: auto; margin-right: auto; width: 75%; border-collapse: collapse">
 		<tr>
@@ -81,7 +84,5 @@ body {
 		}
 		%>
 	</table>
-	<a href="./addItem.jsp" type="button" class="btn btn-primary">Add
-		Item</a>
 </body>
 </html>

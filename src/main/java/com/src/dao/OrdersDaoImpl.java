@@ -118,7 +118,7 @@ public class OrdersDaoImpl implements OrdersDaoInter {
     @Override
     public List<Order> getAllOrders() {
         getMyStatement();
-        String query="select * from orders";
+        String query="select * from orders order by orderid desc";
         List<Order> orderList = new ArrayList();
         try {
             ResultSet res=stmt.executeQuery(query);

@@ -23,8 +23,9 @@ body {
 	margin-right: auto;
 	margin-top: 8%;
 	margin-bottom: auto;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius:35px;
 }
 </style>
 </head>

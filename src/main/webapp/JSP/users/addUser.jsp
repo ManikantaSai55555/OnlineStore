@@ -25,6 +25,7 @@ body {
 	margin-bottom: auto;
 	padding-left: 10px;
 	padding-right: 10px;
+	border-radius:35px;
 }
 </style>
 </head>

@@ -23,6 +23,7 @@ body {
 .edititem {
 	width: 30%;
 	border: 2px solid black;
+	border-radius:35px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 8%;
@@ -93,7 +94,7 @@ input {
 				<label for="quantity">Enter Quantity : </label> <input type="number"
 					name="quantity" placeholder="quantity" />
 			</p>
-			<div style="text-align: center">
+			<div style="text-align: center;padding-left:auto;padding-right:auto;">
 				<input type="submit" />
 			</div>
 		</form>

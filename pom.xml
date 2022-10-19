@@ -11,7 +11,6 @@
   <name>OnlineStore Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
-  <!-- https://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat8-maven-plugin -->
   <dependencies>
 
 
