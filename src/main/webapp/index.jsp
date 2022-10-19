@@ -18,7 +18,7 @@ body {
 
 .formclass {
 	width: 30%;
-	border: 2px solid black;
+	border: 2px solid white;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 8%;
@@ -26,6 +26,7 @@ body {
 	padding-left: 15px;
 	padding-right: 15px;
 	border-radius:35px;
+	background:white;
 }
 </style>
 </head>

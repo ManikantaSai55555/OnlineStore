@@ -18,14 +18,15 @@ body {
 
 .formclass {
 	width: 30%;
-	border: 2px solid black;
+	border: 2px solid white;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 8%;
+	margin-top: 10%;
 	margin-bottom: auto;
 	padding-left: 10px;
 	padding-right: 10px;
 	border-radius:35px;
+	background:white;
 }
 </style>
 </head>

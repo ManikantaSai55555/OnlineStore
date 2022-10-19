@@ -66,6 +66,7 @@ body {
 		<%
 		}
 		%>
+	</table>
 	
 </body>
 </html>
