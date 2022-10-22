@@ -29,6 +29,15 @@
 ### Manage Items for Admin
 ![9](https://github.com/ManikantaSai55555/OnlineStore/blob/master/images/Screenshot%20i.png)
 
+### Admin can Add Items
+![10](https://github.com/ManikantaSai55555/OnlineStore/blob/master/images/Screenshot%20p.png)
+
+### After the Item is Added
+![10](https://github.com/ManikantaSai55555/OnlineStore/blob/master/images/Screenshot%20o.png)
+
+### Admin can Edit Items
+![10](https://github.com/ManikantaSai55555/OnlineStore/blob/master/images/Screenshot%20n.png)
+
 ### Admin Users List View Page
 ![10](https://github.com/ManikantaSai55555/OnlineStore/blob/master/images/Screenshot%20j.png)
 
