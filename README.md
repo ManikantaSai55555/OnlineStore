@@ -47,5 +47,5 @@
 ### Page after the Order is Delivered
 ![12](https://github.com/ManikantaSai55555/OnlineStore/blob/master/images/Screenshot%20l.png)
 
-### User Orders Page after the Delivery of Product
+### User's Orders Page after the Delivery of Product
 ![13](https://github.com/ManikantaSai55555/OnlineStore/blob/master/images/Screenshot%20m.png)
